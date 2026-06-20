@@ -9,18 +9,22 @@ interface Props {
 
 // Simple markdown → HTML converter (no external lib needed)
 function mdToHtml(md: string): string {
-  return md
+  const html = md
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
-   .replace(/(<li>[\s\S]*<\/li>)/g, '<ul>$1</ul>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/^---$/gm, '<hr/>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[h|u|l|h|p|c])(.+)$/gm, '<p>$1</p>');
+    .replace(/\n\n/g, '</p><p>');
+
+  return `<p>${html}</p>`
+    .replace(/<p><h/g, '<h')
+    .replace(/<\/h([1-3])><\/p>/g, '</h$1>')
+    .replace(/<p><ul>/g, '<ul>')
+    .replace(/<\/ul><\/p>/g, '</ul>');
 }
 
 const PRINT_STYLES = `
