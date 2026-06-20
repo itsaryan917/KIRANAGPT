@@ -1,0 +1,10 @@
+{
+  "n_samples": 2000,
+  "train_test_split": "80/20, random_state=42",
+  "market_share_train_rmse": 0.0296,
+  "market_share_test_rmse": 0.0412,
+  "credit_score_train_rmse": 15.37,
+  "credit_score_test_rmse": 31.84,
+  "model_backend": "xgboost",
+  "data_source": "synthetic \u2014 generated from India retail research benchmarks (NCAER footfall, Nielsen basket size). Real-outcome retraining is the planned NBFC pilot step."
+}

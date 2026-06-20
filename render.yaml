@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kiranagpt-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: KIRANAGPT_API_KEY
+        value: kiranagpt2026

@@ -1,0 +1,30 @@
+# ── Core API ────────────────────────────────────────────────
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+
+# ── Computer Vision ──────────────────────────────────────────
+numpy
+opencv-python
+pillow
+
+# ── YOLO ─────────────────────────────────────────────────────
+torch
+torchvision
+ultralytics
+
+# ── ML Models ────────────────────────────────────────────────
+scikit-learn
+xgboost
+
+# ── Geo / HTTP ───────────────────────────────────────────────
+requests
+geopy
+
+# ── Validation & Schemas ─────────────────────────────────────
+pydantic
+
+# ── NOTE: No anthropic or openai package needed!
+# KiranaGPT uses Google Gemini 1.5 Flash (FREE tier) via stdlib urllib.
+# Get your free key at: https://aistudio.google.com
