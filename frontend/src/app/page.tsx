@@ -376,7 +376,11 @@ export default function HomePage() {
             <span style={{ padding: '3px 10px', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 20, fontSize: 11, fontWeight: 600, color: 'var(--accent)' }}>
               {IS_MOCK ? '⚠️ Mock' : '🤖 AI-Powered'}
             </span>
-            {result.agent_elapsed_s && <span style={{ marginLeft: 'auto', fontSize: 11, color: 'var(--text-muted)' }}>Total: {String(result.agent_elapsed_s)}s</span>}
+           {typeof result.agent_elapsed_s === 'number' && (
+  <span style={{ marginLeft: 'auto', fontSize: 11, color: 'var(--text-muted)' }}>
+    Total: {result.agent_elapsed_s}s
+  </span>
+)}
           </div>
 
           <ErrorBoundary componentName="ResultCard"><ResultCard result={result as Parameters<typeof ResultCard>[0]['result']} /></ErrorBoundary>
