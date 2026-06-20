@@ -37,7 +37,7 @@ export function VoiceChat({ storeContext, apiBase = '' }: Props) {
   const [error, setError] = useState('');
   const [speaking, setSpeaking] = useState(false);
   const [support, setSupport] = useState({ stt: true, tts: true, browserName: 'Chrome' });
-  const recRef = useRef<SpeechRecognition | null>(null);
+  const recRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
