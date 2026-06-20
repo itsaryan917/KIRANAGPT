@@ -384,7 +384,7 @@ export default function HomePage() {
           </div>
 
          <ErrorBoundary componentName="ResultCard">
-  <ResultCard result={result as unknown as UnderwritingResult} />
+<ResultCard result={result as any} />
 </ErrorBoundary>
 
           {/* Agent execution log */}
