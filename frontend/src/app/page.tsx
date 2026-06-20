@@ -383,7 +383,9 @@ export default function HomePage() {
 )}
           </div>
 
-          <ErrorBoundary componentName="ResultCard"><ResultCard result={result as Parameters<typeof ResultCard>[0]['result']} /></ErrorBoundary>
+         <ErrorBoundary componentName="ResultCard">
+  <ResultCard result={result as unknown as UnderwritingResult} />
+</ErrorBoundary>
 
           {/* Agent execution log */}
           {Array.isArray(result.agents_run) && result.agents_run.length > 0 && (
