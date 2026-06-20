@@ -403,7 +403,9 @@ export default function HomePage() {
             </div>
           )}
 
-          <ErrorBoundary componentName="AgentInsightsPanel"><AgentInsightsPanel result={result as Parameters<typeof AgentInsightsPanel>[0]['result']} /></ErrorBoundary>
+          <ErrorBoundary componentName="AgentInsightsPanel">
+  <AgentInsightsPanel result={result as any} />
+</ErrorBoundary>
           <ErrorBoundary componentName="VoiceChat"><VoiceChat storeContext={result} apiBase={API_BASE} /></ErrorBoundary>
 
           {/* Audit trail panel — shows RBI compliance story */}
